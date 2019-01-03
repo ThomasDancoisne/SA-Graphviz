@@ -1,0 +1,8 @@
+<nav search_view="search" color="#ff9900">
+  <view name="search" default="true" />
+  <view name="step_by_step_example" />
+  <view name="dot_manual_examples" />
+  <view name="randomly_generated_graphs" />
+  <view name="execution_graph" />
+  <view name="dashboards" />
+</nav>
