@@ -287,12 +287,10 @@ define([
 		constructor(subtype,attrlist,parents,position) {
 			var attr=this;
 			this.id=idCount++;
-			console.log("attrlist avant : " + attrlist);
 			this.attrlist=attrlist ? attrlist.replace(/;;/g,",") : attrlist;
 			if (subtype)
 				this.attrlist=attrlist ? attrlist.replace(/;/g,",") : attrlist;
 			this.subtype=subtype ? subtype : "";
-			console.log("attrlist apres : " + this.attrlist);
 			parents.forEach(function(parent, index)
 			{
 				parent.addMember(attr);
