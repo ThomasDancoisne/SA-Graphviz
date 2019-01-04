@@ -652,7 +652,7 @@ define(["api/SplunkVisualizationBase","api/SplunkVisualizationUtils"], function(
 					else
 					{
 							throw new SplunkVisualizationBase.VisualizationError(
-								'The result set can\'t contain an element with type="' + type + '". The valid types are : graph|subgraph|node|attr|edge'
+								'The result set can\'t contain an element with type="' + type + '". The valid types are graph, subgraph, cluster, node, edge and attr'
 							);
 					}
 				});
