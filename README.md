@@ -1,6 +1,6 @@
 # Introduction
 
-This Splunk add-on allows users to simply create all sorts of graphs using the well known Graphviz library.
+This Splunk app allows users to simply create all sorts of graphs using the Graphviz library.
 
 It adds a new type of visualization called Graphviz that interprets Splunk result set into a graph using a specific but simple syntax.
 
