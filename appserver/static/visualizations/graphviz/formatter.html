@@ -54,6 +54,12 @@
 		<option value="true">Yes</option>
         </splunk-select>
     </splunk-control-group>
+    <splunk-control-group label="Wait for complete result set">
+        <splunk-select name="{{VIZ_NAMESPACE}}.wait" value="true">
+		<option value="false">No</option>
+		<option value="true">Yes</option>
+        </splunk-select>
+    </splunk-control-group>
 </form>
 <form class="splunk-formatter-section" section-label="Debug">
     <splunk-control-group label="Display Dot graph on console">

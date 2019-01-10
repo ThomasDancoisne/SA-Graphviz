@@ -617,6 +617,21 @@ define([
         //  'config' will be the configuration property object
         updateView: function(data, config) {
 
+			// Guard for empty data
+            if(!data || !data.rows || data.rows.length < 1){
+                return;
+            }
+		
+			svg = d3.select(this.el);
+			svg.selectAll("*").remove();
+			
+			wait = config[this.getPropertyNamespaceInfo().propertyNamespace + 'wait'] || "true";
+			if (wait == "true" && data.meta.done != true)
+			{
+				svg.append("text").text("\tWaiting for complete result set ...");
+				return;
+			}
+
 			currentPosition=0;
 			mapNodes.clear();
 			mapSubgraphs.clear();
@@ -626,11 +641,6 @@ define([
 				delete rootGraph.graph;
 			}
 		
-			// Guard for empty data
-            if(!data || !data.rows || data.rows.length < 1){
-                return;
-            }
-
 			// check config
 			xScrollbar = config[this.getPropertyNamespaceInfo().propertyNamespace + 'xScrollbar'] || "false";
 			yScrollbar = config[this.getPropertyNamespaceInfo().propertyNamespace + 'yScrollbar'] || "false";
@@ -650,9 +660,6 @@ define([
 			if (displayGraph == "true")
 				console.log(graphDot);
 			
-			svg = d3.select(this.el);
-			
-			svg.selectAll("*").remove();
 			
             // Clear the div
             this.$el.empty();
